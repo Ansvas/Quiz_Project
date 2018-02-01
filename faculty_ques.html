@@ -1,0 +1,118 @@
+<html>
+
+<head>
+  <style>
+  .space
+  {
+    height: 10%;
+    text-align: center;
+  }
+  </style>
+
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+<link rel="stylesheet" href="css/jquery.countdown.css">
+
+<style type="text/css">
+
+#defaultCountdown { width: 240px; height: 45px; }
+</style>
+     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/jquery.plugin.min.js"></script>
+<script src="js/jquery.countdown.js"></script>
+<script>
+$(function () {
+  var austDay = new Date();
+  austDay = new Date(austDay.getFullYear() + 0, 2 - 1, 20);
+  $('#defaultCountdown').countdown({until: austDay});
+  $('#year').text(austDay.getFullYear());
+});
+</script>
+    <!-- Compiled and minif
+      ied CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+
+</head>
+<body>
+  <div class="card-panel red accent-1">
+    <div class="space">
+      <h1>Quiz</h1>
+    </div>
+  </div>
+<div class="Quiz-body">
+<p>Counting down to 26 January <span id="year">2014</span>.</p>
+<div id="defaultCountdown"></div>
+  <div class="row">
+        <div class="col s12">
+            <div id="defaultCountdown"></div>
+          Please enter your question:
+          <div class="input-field inline">
+            <input id="tquestion" type="text" class="validate">
+            </div>
+        </div>
+      </div>
+    <input type="checkbox" name ="questions" id="1 question" value="1" />
+       <label for="1 question">1. </label><div class="input-field inline">
+            <input id="toption1" type="text" class="validate">
+            </div><br/>
+   <input type="checkbox" name ="questions" id="2 question" value="2"/>
+       <label for="2 question">2.</label><div class="input-field inline">
+            <input id="toption2" type="text" class="validate">
+            </div><br/>
+    <input type="checkbox" name ="questions" id="3 question" value="3"/>
+       <label for="3 question">3.</label><div class="input-field inline">
+            <input id="toption3" type="text" class="validate">
+            </div> <br/>
+    <input type="checkbox" name ="questions" id="4 question" value="4"/>
+       <label for="4 question">4.</label><div class="input-field inline">
+            <input id="toption4" type="text" class="validate">
+            </div></div><br/>
+ </div>
+ <button class="waves-effect waves-light btn" type="submit" onclick="submitclick()">Submit</button>
+
+
+    <!-- JavaScript functions begin here, here we push the question and its options -->
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB-zPviDEmZeY_7xEdiRgR0FGv7WslsuLE",
+    authDomain: "jwtproject-1aa76.firebaseapp.com",
+    databaseURL: "https://jwtproject-1aa76.firebaseio.com",
+    projectId: "jwtproject-1aa76",
+    storageBucket: "jwtproject-1aa76.appspot.com",
+    messagingSenderId: "1017119305086"
+  };
+  firebase.initializeApp(config);
+
+</script>
+
+
+<script type="text/javascript">
+    function submitclick(){
+      var firebaseRef =firebase.database().ref();
+      var questionRef =firebaseRef.child("Teachers/pooja/s1/Questions").push();
+      
+    var question=document.getElementById('tquestion').value;
+        var option1=document.getElementById('toption1').value;
+            var option2=document.getElementById('toption2').value;
+                var option3=document.getElementById('toption3').value;
+                    var option4=document.getElementById('toption4').value;
+
+        
+      questionRef.child("question").set(question);
+      questionRef.child("option1").set(option1);
+            questionRef.child("option2").set(option2);
+                  questionRef.child("option3").set(option3);
+                        questionRef.child("option4").set(option4);
+      firebaseRef.push(question);
+    }
+
+</script>
+</body>
+</html>
