@@ -68,30 +68,28 @@ $(function () {
   <div class="row">
         <div class="col s12">
           Question:
-          <div class="input-field inline">
-            <input id="email" type="email" class="validate">
-            </div>
+       <h5 id="questiontext"> Question1 text </h5><br/>
         </div>
       </div>
     <input type="checkbox" name ="questions" id="1 question" value="1"/>
-       <label for="1 question">1. </label><div class="input-field inline">
-            <input id="option1 text" type="text" class="validate">
-            </div><br/>
+       <label for="1 question">1. </label>
+       <h5 id="option1text"> option1text </h5><br/>
+
+
    <input type="checkbox" name ="questions" id="2 question" value="2"/>
-       <label for="2 question">2.</label><div class="input-field inline">
-            <input id="option2 text" type="text" class="validate">
-            </div><br/>
+       <label for="2 question">2.</label>
+       <h5 id="option2text"> option2text </h5><br/>
+
     <input type="checkbox" name ="questions" id="3 question" value="3"/>
-       <label for="3 question">3.</label><div class="input-field inline">
-            <input id="option3 text" type="text" class="validate">
-            </div> <br/>
+       <label for="3 question">3.</label>
+       <h5 id="option3text"> option3text </h5><br/>
+
     <input type="checkbox" name ="questions" id="4 question" value="4"/>
-       <label for="4 question">4.</label><div class="input-field inline">
-            <input id="option4 text" type="text" class="validate">
-            </div></div><br/>
+       <label for="4 question">4.</label>
+       <h5 id="option4text"> option4text </h5><br/>
  </div>
- <button class="waves-effect waves-light btn" type="previous">Previous</button>
- <button class="waves-effect waves-light btn" type="submit">Submit</button>
+ <button class="waves-effect waves-light btn" onclick="Submit()" type="previous">Previous</button>
+ <button class="waves-effect waves-light btn" onclick="submit()" type="submit">Submit</button>
  <button class="waves-effect waves-light btn" type="skip">Skip</button>
 
 
