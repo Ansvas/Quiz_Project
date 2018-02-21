@@ -16,12 +16,23 @@
 
 <style type="text/css">
 
-#defaultCountdown { width: 240px; height: 45px; }
+#defaultCountdown { width: 240px; height: 50px; }
 </style>
-     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+
+
+
+    <!-- js files for clock, cant be put at the bottom of this html file-->
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/jquery.plugin.min.js"></script>
 <script src="js/jquery.countdown.js"></script>
+
+    <!-- four js files used to show clock-->
+
+   <!-- function to show clock -->
+
 <script>
 $(function () {
   var austDay = new Date();
@@ -30,24 +41,33 @@ $(function () {
   $('#year').text(austDay.getFullYear());
 });
 </script>
-    <!-- Compiled and minif
-      ied CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
+
+    <!-- links for using materialize css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-    <!-- Compiled and minified JavaScript -->
-
+    <!-- materialise css links endsssss-->
 </head>
+
+
+
 <body>
   <div class="card-panel red accent-1">
     <div class="space">
       <h1>Quiz</h1>
+
+<!-- to represent clock-->
+<div align="right">
+<p>Time Remaining</p>
+<div id="defaultCountdown">
+</div>
+</div>
+    <!-- clock end-->
+    
     </div>
   </div>
 <div class="Quiz-body">
-<p>Counting down to 26 January <span id="year">2014</span>.</p>
-<div id="defaultCountdown"></div>
   <div class="row">
         <div class="col s12">
             <div id="defaultCountdown"></div>
@@ -78,41 +98,11 @@ $(function () {
 
 
     <!-- JavaScript functions begin here, here we push the question and its options -->
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB-zPviDEmZeY_7xEdiRgR0FGv7WslsuLE",
-    authDomain: "jwtproject-1aa76.firebaseapp.com",
-    databaseURL: "https://jwtproject-1aa76.firebaseio.com",
-    projectId: "jwtproject-1aa76",
-    storageBucket: "jwtproject-1aa76.appspot.com",
-    messagingSenderId: "1017119305086"
-  };
-  firebase.initializeApp(config);
 
-</script>
+<script src="faculty_ques.js"></script>
 
 
-<script type="text/javascript">
-    function submitclick(){
-      var firebaseRef =firebase.database().ref();
-      var questionRef =firebaseRef.child("Teachers/pooja/s1/Questions").push();
-      
-    var question=document.getElementById('tquestion').value;
-        var option1=document.getElementById('toption1').value;
-            var option2=document.getElementById('toption2').value;
-                var option3=document.getElementById('toption3').value;
-                    var option4=document.getElementById('toption4').value;
 
-        
-      questionRef.child("question").set(question);
-      questionRef.child("option1").set(option1);
-            questionRef.child("option2").set(option2);
-                  questionRef.child("option3").set(option3);
-                        questionRef.child("option4").set(option4);
-      firebaseRef.push(question);
-    }
 
-</script>
 </body>
 </html>
