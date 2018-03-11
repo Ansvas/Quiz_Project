@@ -1,5 +1,50 @@
-  
-    //firebase intitalisation here  
+   
+var checkbox1;
+var checkbox2;
+var checkbox3;
+var checkbox4; 
+var questionRef;
+var checkbox;
+var abc='unknown';
+var count1;
+var count2;
+var count3;
+var count4;
+var count5;
+var questionRef1;
+var total_q_1 = 'total_q_1';
+var total_q_2 = 'total_q_2';
+var total_q_3 = 'total_q_3';
+var total_q_4 = 'total_q_4';
+var total_q_5 = 'total_q_5';
+
+
+
+      (function () {
+    if (window.addEventListener) {
+        window.addEventListener('DOMContentLoaded',submitclick, false);
+    } else {
+        window.attachEvent('onload', submitclick);
+    }
+} ());
+
+
+
+
+  var checkbox1=document.getElementById('checkbox1');
+  var checkbox2=document.getElementById('checkbox2');
+  var checkbox3=document.getElementById('checkbox3');
+  var checkbox4=document.getElementById('checkbox4');
+  var cbmark1=document.getElementById('cbmark1');
+  var cbmark2=document.getElementById('cbmark2');
+  var cbmark3=document.getElementById('cbmark3');
+  var cbmark4=document.getElementById('cbmark4');
+  var cbmark5=document.getElementById('cbmark5');
+
+
+
+//firebase initialization
+
   var config = {
     apiKey: "AIzaSyB-zPviDEmZeY_7xEdiRgR0FGv7WslsuLE",
     authDomain: "jwtproject-1aa76.firebaseapp.com",
@@ -12,64 +57,165 @@
 
 
 
-//firebase intialise end
-
-        database = firebase.database();
-        var questionRefr =database.ref("Teachers/pooja/s1/Questions");
+//retriving value of count1
 
 
 
+
+
+      var firebaseRef =firebase.database().ref();
+
+
+     var questionRef1 =firebaseRef.child("Teachers/pooja/s1/Questions/1_marks");
+
+
+     var count1Ref = firebaseRef.child("total_q_1");
+     var count2Ref = firebaseRef.child("total_q_2");
+     var count3Ref = firebaseRef.child("total_q_3");
+     var count4Ref = firebaseRef.child("total_q_4");
+     var count5Ref = firebaseRef.child("total_q_5"); 
+
+
+count1Ref.on('value', function(snapshot) {
+
+count1=snapshot.val();
+  console.log(snapshot.val());
+});
+
+count2Ref.on('value', function(snapsho) {
+
+count2=snapsho.val();
+  console.log(snapsho.val());
+});
+
+count3Ref.on('value', function(snapsh) {
+
+count3=snapsh.val();
+  console.log(snapsh.val());
+});
+
+
+count4Ref.on('value', function(snaps) {
+
+count4=snaps.val();
+  console.log(snaps.val());
+});
+
+
+count5Ref.on('value', function(snap) {
+
+count5=snap.val();
+  console.log(snap.val());
+});
+
+
+
+//submit click function
+
+    function submitclick(){
+     var firebaseRef =firebase.database().ref();
+//       questionRef =firebaseRef.child("Teachers/pooja/s1/Questions").push();
+
+
+
+     var questionRef1 =firebaseRef.child("Teachers/pooja/s1/Questions/1_marks");
+     var questionRef2 =firebaseRef.child("Teachers/pooja/s1/Questions/2_marks");
+     var questionRef3 =firebaseRef.child("Teachers/pooja/s1/Questions/3_marks");
+     var questionRef4 =firebaseRef.child("Teachers/pooja/s1/Questions/4_marks");
+     var questionRef5 =firebaseRef.child("Teachers/pooja/s1/Questions/5_marks");
+     
+
+        
+ 
+ 
+                        //setting values acc to marks
+
+
+                        if(cbmark1.checked)
+                        {
+                          settingvalues(cbmark1,questionRef1,count1,total_q_1);
+                        }
+
+                        if(cbmark2.checked)
+                        {
+                          settingvalues(cbmark2,questionRef2,count2,total_q_2);
+                        }
+                        if(cbmark3.checked)
+                        {
+                          settingvalues(cbmark3,questionRef3,count3,total_q_3);
+                        }
+                        if(cbmark4.checked)
+                        {
+                          settingvalues(cbmark4,questionRef4,count4,total_q_4);
+                        }
+                        if(cbmark5.checked)
+                        {
+                          settingvalues(cbmark5,questionRef5,count5,total_q_5);
+                        }
 
  
-      questionRefr.on('value',gotData,errData);
-
-      function gotData(data){
-        console.log(data.val());
-
-        //ques is an type of an array  of key of questions
-        var ques =data.val();
-
-        //we store all the key with the data in keys array
-        var keys=Object.keys(ques);
-        ranarr=getRandom(keys,5);
-        console.log(ranarr);
-
-        for(var i=0;i<ranarr.length;i++)
-        {
-          //store the value of key in k
-          var k=ranarr[i];
-          var option1=ques[k].option1;
-          var option2=ques[k].option2;
-          var option3=ques[k].option3;
-          var option4=ques[k].option4;
-          var q=ques[k].question;
-          console.log(option1,option2,option3,option4,q);
-        }
-
-      }
-
-      //end of gotData function
-
-      function errData(err){
-        console.log('Error!');
-        console.log(err);
-      }
-
-//random function for use of something
-
-function getRandom(arr, n) {
-    var result = new Array(n),
-        len = arr.length,
-        taken = new Array(len);
-    if (n > len)
-        throw new RangeError("getRandom: more elements taken than available");
-    while (n--) {
-        var x = Math.floor(Math.random() * len);
-        result[n] = arr[x in taken ? taken[x] : x];
-        taken[x] = --len;
-    }
-    return result;
 }
 
 
-//end of random function
+function settingvalues(cbmark,questionRef,count,total_q)
+{
+
+    var question=document.getElementById('tquestion').value;
+        var option1=document.getElementById('toption1').value;
+            var option2=document.getElementById('toption2').value;
+                var option3=document.getElementById('toption3').value;
+                    var option4=document.getElementById('toption4').value;
+                      var checkbox1=document.getElementById('checkbox1');
+  
+
+
+                        if(cbmark.checked)
+                        {
+
+                          questionRef.child(count).set({
+                          question:question,
+                          option1:option1,
+                          option2:option2,
+                          option3:option3,
+                          option4:option4
+
+                        })
+
+
+      if(checkbox1.checked)
+      {
+      questionRef.child(count).child("checkbox1").set("1");
+    }
+      else
+      {
+      questionRef.child(count).child("checkbox1").set("0"); 
+      }   
+
+
+          if(checkbox2.checked)
+      questionRef.child(count).child("checkbox2").set("1");
+        else               
+      questionRef.child(count).child("checkbox2").set("0");  
+
+
+            if(checkbox3.checked)        
+      questionRef.child(count).child("checkbox3").set("1");       
+        else                       
+      questionRef.child(count).child("checkbox3").set("0");
+        
+
+           if(checkbox4.checked)
+      questionRef.child(count).child("checkbox4").set("1");        
+        else        
+      questionRef.child(count).child("checkbox4").set("0");    
+        
+
+      count=count+1;
+
+      firebaseRef.update({
+  [total_q]: count,
+});
+    }
+}
+
+//end of the function
