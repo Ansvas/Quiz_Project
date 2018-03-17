@@ -165,8 +165,7 @@ function settingvalues(cbmark,questionRef,count,total_q)
             var option2=document.getElementById('toption2').value;
                 var option3=document.getElementById('toption3').value;
                     var option4=document.getElementById('toption4').value;
-                      var checkbox1=document.getElementById('checkbox1');
-  
+                      var checkbox1=document.getElementById('checkbox1');  
 
 
                         if(cbmark.checked)
@@ -178,18 +177,14 @@ function settingvalues(cbmark,questionRef,count,total_q)
                           option2:option2,
                           option3:option3,
                           option4:option4
-
                         })
 
 
       if(checkbox1.checked)
-      {
-      questionRef.child(count).child("checkbox1").set("1");
-    }
+      questionRef.child(count).child("checkbox1").set("1");    
       else
-      {
       questionRef.child(count).child("checkbox1").set("0"); 
-      }   
+      
 
 
           if(checkbox2.checked)
