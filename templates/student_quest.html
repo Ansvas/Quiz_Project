@@ -1,0 +1,112 @@
+<html>
+
+<head>
+  <style>
+  .space
+  {
+    height: 10%;
+    text-align: center;
+  }
+  </style>
+
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+
+
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/jquery.countdown.css') }}">
+
+<style type="text/css">
+
+#defaultCountdown { width: 240px; height: 50px; }
+</style>
+
+
+
+
+    <!-- js files for clock, cant be put at the bottom of this html file-->
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{ url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+
+ <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.plugin.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.countdown.js') }}"></script>
+
+    <!-- four js files used to show clock-->
+
+ 
+
+
+ <script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>  
+
+<script>
+$(function () {
+  var austDay = new Date();
+  austDay = new Date(austDay.getFullYear() + 0, 2 - 1, 26);
+  $('#defaultCountdown').countdown({until: austDay});
+  $('#year').text(austDay.getFullYear());
+});
+</script>
+
+
+    <!-- links for using materialize css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <!-- materialise css links endsssss-->
+</head>
+<body>
+
+  <input type="hidden" class="username" value="{{ user }}" />
+
+
+  <div class="card-panel red accent-1">
+    <div class="space">
+      <h1>Quiz</h1>
+
+<!-- to represent clock-->
+<div align="right">
+<p>Time Remaining</p>
+<div id="defaultCountdown">
+</div>
+</div>
+    <!-- clock end-->
+    
+    </div>
+  </div>
+<div class="Quiz-body">
+  <div class="row">
+        <div class="col s12">
+          Question:
+       <h5 id="questiontext"> Question1 text </h5><br/>
+        </div>
+      </div>
+    <input type="checkbox" name ="questions" id="1question" value="1"/>
+       <label for="1question">1. </label>
+       <h5 id="option1text"> option1text </h5><br/>
+
+
+   <input type="checkbox" name ="questions" id="2question" value="2"/>
+       <label for="2question">2.</label>
+       <h5 id="option2text"> option2text </h5><br/>
+
+    <input type="checkbox" name ="questions" id="3question" value="3"/>
+       <label for="3question">3.</label>
+       <h5 id="option3text"> option3text </h5><br/>
+
+    <input type="checkbox" name ="questions" id="4question" value="4"/>
+       <label for="4question">4.</label>
+       <h5 id="option4text"> option4text </h5><br/>
+ </div>
+ <button class="waves-effect waves-light btn" onclick="Submit()" type="previous">Previous</button>
+ <button class="waves-effect waves-light btn" onclick="submit()" type="submit">Submit</button>
+ <button class="waves-effect waves-light btn" type="skip">Skip</button>
+
+
+ <script type="text/javascript" src="{{ url_for('static', filename = 'student_quest.js') }}"></script>
+</body>
+</html>

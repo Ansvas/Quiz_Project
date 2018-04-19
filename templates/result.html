@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+
+<style>
+div {
+    height: 200px;
+    width: 50%;
+}
+</style>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{ url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+
+ <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.plugin.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.countdown.js') }}"></script>
+
+	<title>Chart.js samples</title>
+</head>
+<body>
+
+
+
+</table>
+</div>
+<div id="mydata">
+<b>Current data in the system ...</b>
+<table id="myTableData"  border="1" cellpadding="2">
+    <tr>
+        <td><b>Question no</b></td>
+        <td><b>marked answer</b></td>
+        <td><b>correct answer</b></td>
+        <td><b>marks</b></td>
+    </tr>
+</table>
+
+
+
+<canvas id="line-chart" width="800" height="450"></canvas>
+
+
+
+<script type="text/javascript">
+
+	  var config = {
+    apiKey: "AIzaSyB-zPviDEmZeY_7xEdiRgR0FGv7WslsuLE",
+    authDomain: "jwtproject-1aa76.firebaseapp.com",
+    databaseURL: "https://jwtproject-1aa76.firebaseio.com",
+    projectId: "jwtproject-1aa76",
+    storageBucket: "jwtproject-1aa76.appspot.com",
+    messagingSenderId: "1017119305086"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+
+
+
+<script>
+
+	var prn;
+	var allq;
+	var ans;
+	var t_marks;
+
+
+
+   $(function() {
+
+      $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
+        a1: prn
+      },  function(data) {
+        var prn=data.prn;
+        var allq=data.allq;
+        var ans=data.ans;
+        var n1=data.n1;
+        var n2=data.n2;
+        var n3=data.n3;
+        var n4=data.n4;
+        var n5=data.n5;
+        var ques=data.ques;
+        var ques2=data.ques2;
+        var ques3=data.ques3;
+        var ques4=data.ques4;
+        var ques5=data.ques5;
+
+        console.log(prn);
+        console.log(allq);
+        console.log(ans);
+        console.log(t_marks);
+      });
+      return false;
+  });
+
+
+
+var firebaseRef =firebase.database().ref();
+
+var StudentRef=firebaseRef.child("s1/Student_ans");
+var StudentRef_result=firebaseRef.child("s1/Student_result");
+
+
+
+
+var Student_ans="A";
+var correct_ans="B";
+var count=1;
+var sans;
+var cans;
+var sub="ds";
+var result;
+var prn_u=[];
+var mark_u=[];
+
+var table = document.getElementById("myTableData");
+
+
+
+      StudentRef.on('value',gotData2,errData);
+      
+
+	result=cal_result();
+    StudentRef_result.child(prn).child(sub).set(result); 
+
+
+      StudentRef_result.on('value',gotData3,errData);
+
+
+            function gotData2(data){
+        console.log(data.val());
+        //ques is an type of an array  of key of questions
+         prn =data.val();
+        //we store all the key with the data in keys array
+        var prnkeys=Object.keys(prn);     
+}
+
+
+            function gotData3(data){
+        console.log(data.val());
+        //ques is an type of an array  of key of questions
+         prn =data.val();
+        //we store all the key with the data in keys array
+        var prnkeys=Object.keys(prn);     
+}
+
+
+	chart.render();	
+
+	for(i=0;i<prnkeys.length;i++)
+	{
+	var prn_u=prnkeys[i];
+	mark_u=prn[prn_u].sub;
+
+	var length = chart.options.data[0].dataPoints.length;
+	chart.options.data[0].dataPoints.push({ y: mark_u });
+	chart.render();
+
+	}
+
+
+
+	var chart = new CanvasJS.Chart("chartContainer", { 
+		title: {
+			text: "Adding & Updating dataPoints"
+		},
+		data: [
+		{
+			type: "spline",
+			dataPoints: []
+		}
+		]
+	});
+
+
+
+
+	function addRow(count,Student_ans,correct_ans,marks) {
+    
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+
+    row.insertCell(0).innerHTML= count;
+    row.insertCell(1).innerHTML= Student_ans;
+    row.insertCell(2).innerHTML= correct_ans;
+    row.insertCell(3).innerHTML= marks;
+}
+
+
+
+	function getsAnswer(m)
+	{
+	if(ans[m].checkbox1==1)
+	sans='A';
+	if(ans[m].checkbox1==1)
+	sans=sans+'B';
+	if(ans[m].checkbox1==1)
+	sans=sans+'C';
+	if(ans[m].checkbox1==1)
+	sans=sans+'D';
+	return sans;		
+	}
+
+	function gettAnswer(k)
+	{
+	if(ans[k].checkbox1==1)
+	cans='A';
+	if(ans[k].checkbox1==1)
+	cans=cans+'B';
+	if(ans[k].checkbox1==1)
+	cans=cans+'C';
+	if(ans[k].checkbox1==1)
+	cans=cans+'D';
+	return cans;		
+	}
+
+
+      function errData(err){
+        console.log('Error!');
+        console.log(err);
+      }
+
+
+
+function cal_result()
+    {
+     console.log(ans);
+
+     var keys_ans=Object.keys(ans);
+
+     console.log("keys_ans Array"+ keys_ans);
+
+      allq=allques();
+
+      console.log("allq array"+ allq);
+
+console.log("ques array");
+      console.log(ques);
+
+
+      for(i=0;i<n1;i++)
+      {
+        k=allq[i];
+       var m=keys_ans[i];
+        if(
+        (ans[m].checkbox1==ques[k].checkbox1)&&
+        (ans[m].checkbox2==ques[k].checkbox2)&&
+        (ans[m].checkbox3==ques[k].checkbox3)&&
+        (ans[m].checkbox4==ques[k].checkbox4))
+        {
+          mark=ans[m].marks;
+          total_mark=mark+total_mark;
+        }
+        var sa=getsAnswer(m);
+        var ca=gettAnswer(k);
+        addRow(i+1,sa,ca,mark);
+      }
+
+            for(i=n1;i<(n1+n2);i++)
+      {
+        k=allq[i];
+        m=keys_ans[i];
+        if(
+        (ans[m].checkbox1==ques2[k].checkbox1)&&
+        (ans[m].checkbox2==ques2[k].checkbox2)&&
+        (ans[m].checkbox3==ques2[k].checkbox3)&&
+        (ans[m].checkbox4==ques2[k].checkbox4))
+        {
+          mark=ans[m].marks;
+          total_mark=mark+total_mark;
+        }
+        var sa=getsAnswer(m);
+        var ca=gettAnswer(k);
+        addRow(i+1,sa,ca,mark);
+
+      }
+
+            for(i=(n1+n2);i<(n1+n2+n3);i++)
+      {
+        k=allq[i];
+        m=keys_ans[i];
+        if(
+        (ans[m].checkbox1==ques3[k].checkbox1)&&
+        (ans[m].checkbox2==ques3[k].checkbox2)&&
+        (ans[m].checkbox3==ques3[k].checkbox3)&&
+        (ans[m].checkbox4==ques3[k].checkbox4))
+        {
+          mark=ans[m].marks;
+          total_mark=mark+total_mark;
+        }
+        var sa=getsAnswer(m);
+        var ca=gettAnswer(k);
+        addRow(i+1,sa,ca,mark);        
+      }
+
+            for(i=(n1+n2+n3);i<(n1+n2+n3+n4);i++)
+      {
+        k=allq[i];
+        m=keys_ans[i];
+        if(
+        (ans[m].checkbox1==ques4[k].checkbox1)&&
+        (ans[m].checkbox2==ques4[k].checkbox2)&&
+        (ans[m].checkbox3==ques4[k].checkbox3)&&
+        (ans[m].checkbox4==ques4[k].checkbox4))
+        {
+          mark=ans[m].marks;
+          total_mark=mark+total_mark;
+        }
+        var sa=getsAnswer(m);
+        var ca=gettAnswer(k);
+        addRow(i+1,sa,ca,mark);        
+      }
+
+              for(i=(n1+n2+n3+n4);i<(n1+n2+n3+n4+n5);i++)
+      {
+        k=allq[i];
+        m=keys_ans[i];
+        if(
+        (ans[m].checkbox1==ques5[k].checkbox1)&&
+        (ans[m].checkbox2==ques5[k].checkbox2)&&
+        (ans[m].checkbox3==ques5[k].checkbox3)&&
+        (ans[m].checkbox4==ques5[k].checkbox4))
+        {
+          mark=ans[m].marks;
+          total_mark=mark+total_mark;
+        }
+        var sa=getsAnswer(m);
+        var ca=gettAnswer(k);
+        addRow(i+1,sa,ca,mark);        
+      }
+      console.log(total_mark);
+      return total_mark;
+
+    }
+
+	</script>
+</body>
+</html>

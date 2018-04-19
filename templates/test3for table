@@ -1,0 +1,7 @@
+
+<html>
+
+<div id="myDynamicTable">
+<input type="button" id="create" value="Click here" onclick="Javascript:addTable()">
+to create a Table and add some data using JavaScript
+</div>

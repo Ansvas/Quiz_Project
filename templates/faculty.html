@@ -1,0 +1,573 @@
+<html>
+
+<head>
+  <style>
+  .space
+  {
+    height: 10%;
+    text-align: center;
+  }
+
+   .ttbutton
+  {
+    text-align: center;
+  }
+
+  body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.leftpane {
+    width: 33.33%;
+    height: 100%;
+    float: left;
+    border-collapse: collapse;
+}
+
+.middlepane {
+    width: 33.33%;
+    height: 100%;
+    float: left;
+    background-color: royalblue;
+    border-collapse: collapse;
+}
+
+
+.rightpane {
+  width: 33.33%;
+  height: 100%;
+  position: relative;
+  float: right;
+  background-color: yellow;
+  border-collapse: collapse;
+}
+
+
+
+  </style>
+
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+    <!-- Compiled and minif
+      ied CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+</head>
+<body>
+
+	<div class="card-panel red accent-1">
+    	<div class="space">
+      		<h1>Quiz</h1>
+    	</div>
+  	</div>
+
+<div class="leftpane">
+<div class="ttbutton">
+   <button class="waves-effect waves-light btn" type="submit" onclick="submitclick()">Take Test</button>
+   </div>
+   <br>
+<div class="Quiz-body">
+
+  <div class="row">
+        <div class="col s12">          
+          Enter the following details:
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">          
+          Enter the no of questions of 1 marks:
+          <div class="input-field inline">
+            <input id="toption2" type="text" class="validate">
+            </div>
+        </div>
+      </div>
+
+            <div class="row">
+        <div class="col s12">          
+          Enter the no of questions of 2 marks:
+          <div class="input-field inline">
+            <input id="toption2" type="text" class="validate">
+            </div>
+        </div>
+      </div>
+
+            <div class="row">
+        <div class="col s12">          
+          Enter the no of questions of 3 marks:
+          <div class="input-field inline">
+            <input id="toption2" type="text" class="validate">
+            </div>
+        </div>
+      </div>
+
+            <div class="row">
+        <div class="col s12">          
+          Enter the no of questions of 4 marks:
+          <div class="input-field inline">
+            <input id="toption2" type="text" class="validate">
+            </div>
+        </div>
+      </div>
+
+            <div class="row">
+        <div class="col s12">          
+          Enter the no of questions of 5 marks:
+          <div class="input-field inline">
+            <input id="toption2" type="text" class="validate">
+            </div>
+        </div>
+      </div>
+
+          <div class="row">
+        <div class="col s12">          
+          Enter the time in minutes:
+          <div class="input-field inline">
+            <input id="toption2" type="text" class="validate">
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">          
+          Slect the batch :
+	<div class="ttbutton">
+         <ul id = "grp_dropdown" class = "dropdown-content">
+         <li><a href = "#">Inbox</a></li>
+         <li><a href = "#!">Unread</a></li>
+         <li><a href = "#">Sent</a></li>
+         <li><a href = "#">Outbox</a></li>
+      </ul>
+      
+      <a class = "btn dropdown-button" href = "#" data-activates = "dropdown">batch
+         <i class = "mdi-navigation-arrow-drop-down right"></i></a>
+     </div>
+ </div>
+</div>
+
+      <div class="row">
+        <div class="col s12">          
+          Slect the Subject :
+<div class="ttbutton">
+         <ul id = "dropdown" class = "dropdown-content">
+         <li><a href = "#">Inbox</a></li>
+         <li><a href = "#">Unread</a></li>
+         <li><a href = "#">Sent</a></li>
+         <li><a href = "#">Outbox</a></li>
+      </ul>
+      
+      <a class = "btn dropdown-button" href = "#" data-activates = "dropdown">batch
+         <i class = "mdi-navigation-arrow-drop-down right"></i></a>
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="middlepane">
+  	
+
+	<h5>Show Database</h5>	
+
+    <div>
+	<ol id="sub_list">
+	</ol> 
+	 </div>
+          <div class="input-field inline">
+            <input id="Subjectname" type="text" class="validate">
+            </div>
+   <button class="waves-effect waves-light btn" type="submit" onclick="Addsubject()">Add Subject</button>
+</div>
+
+  <div class="rightpane">
+    
+    <h5>Groups available:</h5> 
+   
+   <div>
+		<ol id="group_list">
+		</ol> 
+	</div>
+	 <div class="input-field inline">
+         <input id="Groupname" type="text" class="validate">
+     </div>
+
+	<button class="waves-effect waves-light btn" type="submit" onclick="Addgroup()">Add Groups</button>
+</div>
+
+
+
+
+    <!-- JavaScript functions begin here, here we push the question and its options -->
+
+
+
+<script >
+
+//let teacher_name='kalyani';
+var sub_name=[];
+var subj;
+var grp_name=[];
+var grp_data;
+var grps_name=1;
+var marks_name=[];
+var q_no=[];
+var button;
+var sub_div_id;
+
+var teacher_name=localStorage.getItem("Teacher_name");
+console.log(teacher_name);
+
+  var config = {
+    apiKey: "AIzaSyB-zPviDEmZeY_7xEdiRgR0FGv7WslsuLE",
+    authDomain: "jwtproject-1aa76.firebaseapp.com",
+    databaseURL: "https://jwtproject-1aa76.firebaseio.com",
+    projectId: "jwtproject-1aa76",
+    storageBucket: "jwtproject-1aa76.appspot.com",
+    messagingSenderId: "1017119305086"
+  };
+  firebase.initializeApp(config);
+
+
+    database = firebase.database();
+    subRef=`/Teachers/${teacher_name}`
+
+    quesRef=`/Teachers/${teacher_name}/${subj}`
+    var SubjectRefr =database.ref(subRef);
+
+    var groupRef = database.ref("Groups");
+
+    groupRef.on('value',gotData3,errData);
+  
+    SubjectRefr.on('value',gotData,errData);
+
+
+// initializing finish
+
+//handling click event on subject name
+
+
+
+    document.getElementById("sub_list").addEventListener("click",function(e) {
+        // e.target is our targetted element.
+                    // try doing console.log(e.target.nodeName), it will result LI
+     if(e.target && e.target.nodeName == "LI") {
+            console.log(e.target.textContent || e.target.innerText + "was clicked");
+
+            var subj=(e.target.textContent || e.target.innerText);
+
+
+         quesRef=`/Teachers/${teacher_name}/${subj}`
+
+         QuestionRefr =database.ref(quesRef).child("Questions");
+
+        QuestionRefr.on('value',gotData2,errData);
+
+        function got_mark_q(data)
+        {
+        console.log(data.val());
+        //ques is an type of an array  of key of questions
+         question_data=data.val();
+        //we store all the key with the data in keys array
+        if(question_data!=null)
+         q_no=Object.keys(question_data);
+
+         console.log(q_no);
+         }
+
+
+          var div2 = document.createElement("div");
+          var sub_div_id ="div"+ subj;
+          console.log(sub_div_id);
+       		div2.setAttribute('id',sub_div_id);
+
+          console.log(marks_name);
+
+//this loop runs for marks
+  if(marks_name.length>0)
+    {
+        for(var i=0;i<marks_name.length;i++)
+        {
+        	var k=marks_name[i];
+        	console.log(k);
+        	div2.innerHTML += "<br>"+k.bold()+"<br>";
+          quesRef=`/Teachers/${teacher_name}/${subj}/Questions/${k}`
+          Question_mark_Ref =database.ref(quesRef);    
+          Question_mark_Ref.on('value',got_mark_q,errData);
+//this loop is to show all the questions
+          for(var j=0;j<q_no.length;j++)
+          {
+            var m=q_no[j];
+            var checkbox1=question_data[m].checkbox1;
+            var option1=question_data[m].option1;
+            var checkbox2=question_data[m].checkbox2;
+            var checkbox3=question_data[m].checkbox3;
+            var checkbox4=question_data[m].checkbo
+            var option2=question_data[m].option2;
+            var option3=question_data[m].option3;
+            var option4=question_data[m].option4;
+            var q=question_data[m].question;
+            div2.innerHTML += "Question no:"+(j+1)+"<br>";
+            div2.innerHTML += "Question:  "+q+"<br>";
+            div2.innerHTML += "A): "+option1+"<br>";
+            div2.innerHTML += "B): "+option2+"<br>";
+            div2.innerHTML += "C): "+option3+"<br>";
+            div2.innerHTML += "D): "+option4+"<br>";         
+          }
+
+        document.getElementById(subj).appendChild(div2);
+
+      var button = document.createElement("button");
+      var sub_btn_id="btn"+ k;
+      console.log(sub_btn_id);
+      button.setAttribute('id',sub_btn_id);
+      button.innerHTML = "Add Question";
+      document.getElementById(sub_div_id).appendChild(button);
+
+        }
+     }
+     
+     else
+     {
+      var button2 = document.createElement("button");
+      var sub_btn_id="btn"+ subj;
+      button2.setAttribute('id',sub_btn_id);
+      button2.innerHTML = "Add Question";
+      document.getElementById(subj).appendChild(button2);
+     }   
+
+     //handling click event on buttons of add question
+
+    document.getElementById(sub_div_id).addEventListener("click",function(e) {
+        // e.target is our targetted element.
+                    // try doing console.log(e.target.nodeName), it will result LI
+     if(e.target && e.target.nodeName == "BUTTON") {
+
+      console.log(e.target.id);
+      console.log(sub_div_id);
+
+      var ret = e.target.id.replace('btn','');
+      console.log(ret);
+      localStorage.setItem("marks_name",ret);
+      var rett =sub_div_id.replace('div','');
+      localStorage.setItem("subject_name",rett);
+      console.log(rett);
+      window.location.href="/faculty_ques"; 
+     }
+   });
+
+
+
+        }    //end of first if statement
+    });
+
+
+
+
+
+
+//handling click event on group name
+
+    document.getElementById("group_list").addEventListener("click",function(e) {
+        // e.target is our targetted element.
+                    // try doing console.log(e.target.nodeName), it will result LI
+     if(e.target && e.target.nodeName == "LI") {
+            console.log(e.target.textContent || e.target.innerText + "was clicked");
+
+            var grp=(e.target.textContent || e.target.innerText);
+            console.log(grp);
+
+            var prnref=groupRef.child(grp).child("Students");
+
+            var div = document.createElement("div");
+            var grp_div_id ="div"+ grp;
+       		div.setAttribute('id',grp_div_id);
+
+			prnref.once("value", function(snapshot) {
+ 			snapshot.forEach(function(child) {
+    		console.log(child.key+": "+child.val());
+ //   		div.innerHTML = child.val()+"<br>";
+    		div.innerHTML += child.val()+"<br>";
+ 			});
+			});
+
+
+			document.getElementById(grp).appendChild(div);
+
+
+			var input = document.createElement('input');
+        	input.name = 'generated_input';
+        	var grp_input_id="input"+ grp;
+			input.setAttribute('id',grp_input_id);
+
+        	document.getElementById(grp).appendChild(input);
+
+			var button = document.createElement("button");
+			var grp_btn_id="btn"+ grp;
+			button.setAttribute('id',grp_btn_id);
+			button.innerHTML = "Add Student";
+			document.getElementById(grp).appendChild(button);
+
+
+			//functioning of button
+
+			button.addEventListener ("click", function() {
+  			
+			var prn_input=document.getElementById(grp_input_id);	
+
+        	prnref.push(prn_input.value);
+
+        	var div = document.getElementById(grp_div_id);
+
+			div.innerHTML += prn_input.value;
+        	input.value = "";        	
+
+			});
+
+        
+
+        function gotData4(data)
+        {
+        console.log(data.val());
+        //ques is an type of an array  of key of questions
+         grp_data=data.val();
+        //we store all the key with the data in keys array
+        var grps_name=Object.keys(grp_data);
+
+         console.log(grps_name);
+		}
+
+        }
+    });
+
+
+        function gotData2(data)
+        {
+        console.log(data.val());
+        //ques is an type of an array  of key of questions
+         Ques_data=data.val();
+         console.log(Ques_data);
+        //we store all the key with the data in keys array
+        if(Ques_data!=null)
+        marks_name=Object.keys(Ques_data);
+
+         console.log(marks_name);
+		}
+
+
+//retriving data of subjecrt and questions
+
+        function gotData(data)
+        {
+        console.log(data.val());
+        //ques is an type of an array  of key of questions
+         sub_data=data.val();
+        //we store all the key with the data in keys array
+        var sub_name=Object.keys(sub_data);
+       for(var i=0;i<sub_name.length;i++)
+    	{
+        	var li = document.createElement("LI"); 
+        	li.setAttribute('id',sub_name[i]);  
+        	li.innerHTML = sub_name[i];
+        	document.getElementById("sub_list").appendChild(li);
+          var list = document.getElementById("dropdown");
+          var entry = document.createElement('li');
+          entry.innerHTML = sub_name[i];
+          var aTag = document.createElement('a');
+          aTag.setAttribute('href',"yourlink.htm"); 
+          entry.appendChild(aTag);
+          list.appendChild(entry);  
+    	}
+         console.log(sub_name);
+		}
+
+//retriving data of groups to represent first time on the page
+
+		function gotData3(data)
+        {
+        console.log(data.val());
+        //ques is an type of an array  of key of questions
+        grp_data=data.val();
+        //we store all the key with the data in keys array
+        var grp_name=Object.keys(grp_data);
+
+      	for(var i=0;i<grp_name.length;i++)
+    	{
+        	var li = document.createElement("LI");
+        	li.setAttribute('id',grp_name[i]);  
+        	li.innerHTML = grp_name[i];
+        	document.getElementById("group_list").appendChild(li);
+    	}
+ 
+         console.log(grp_name);
+		}
+
+
+     function errData(err){
+        console.log('Error!');
+        console.log(err);
+      }
+
+
+//function to send data in database and to add to the list
+
+    function Addsubject(){
+
+        var input = document.getElementById("Subjectname");
+        if(input.value == "")
+        {
+        	alert("textbox cant be empty");
+        }
+        else{
+
+
+        var li = document.createElement("LI"); 
+        li.setAttribute('id',input.value); 
+        li.innerHTML = input.value;
+        document.getElementById("sub_list").appendChild(li);
+       	SubjectRefr.child(input.value).push(1);
+        input.value = "";
+    	}
+    }
+
+// function to send data in database and to add to 
+
+        function Addgroup(){
+        var input = document.getElementById("Groupname");
+        if(input.value == "")
+        {
+        	alert("textbox cant be empty");
+        }
+        else{
+       	//console.log(grpid);
+
+        var li = document.createElement("LI"); 
+        li.setAttribute('id',input.value);
+        li.innerHTML = input.value; 
+        document.getElementById("group_list").appendChild(li);
+
+        groupRef.child(input.value).push(1);
+        input.value = "";
+    	}
+    }
+</script>
+</body>
+</html>

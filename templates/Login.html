@@ -1,0 +1,334 @@
+<html>
+<head>
+
+
+          
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{ url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+
+ <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.plugin.min.js') }}"></script>
+
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <!-- four js files used to show clock-->
+
+ 
+
+
+ <script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script> 
+
+
+
+
+
+
+    <!-- Compiled and minified JavaScript -->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<style>
+    div {
+      text-align: center;
+    }
+    b {
+      color: grey;
+      text-align: left;
+    }
+  img
+  {
+    width: 30%;
+    height: 30%;
+  }
+
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+
+
+</head>
+<body>
+
+  <div class="card-panel teal lighten-2">
+<div class="card-panel red accent-1">
+  <div class="space">
+    <h1>Quiz</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container">
+      <div class="card-panel grey lighten-5">
+
+
+
+        <div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Teachers')">Teachers</button>
+  <button class="tablinks" onclick="openCity(event, 'Student')">Student</button>
+</div>
+
+<div id="Teachers" class="tabcontent">
+<form action="#">
+    <img class="responsive-img" src="https://www.lawctopus.com/wp-content/uploads/2017/02/Symbiosis-Logo.png">
+
+
+<div class="container">
+   <label><b><font size = "4"> Username</font></b></label>
+   <input type="text" id="Username" placeholder="Enter your Username " required>
+
+   <label><b><font size = "4">Password</font></b></label>
+   <input type="password" id="password" placeholder="Enter your Password" required>
+
+   <button id="teach_login_btn" class="waves-effect waves-light btn" type="submit" onclick="teach()">Login</button>
+ </div>
+</div>
+
+<div id="Student" class="tabcontent">
+
+<form method="POST" action="/student">
+
+    <img class="responsive-img" src="https://www.lawctopus.com/wp-content/uploads/2017/02/Symbiosis-Logo.png">
+
+
+<div class="container">
+   <label><b><font size = "4"> Enter Your PRN </font></b></label>
+   <input type="text" id="prn" name="prn" placeholder="Enter your PRN " required>
+
+
+   <button id="stud_login_btn" class="waves-effect waves-light btn" onclick="stud()" type="submit">Login</button>
+ </div>
+</div>
+
+
+ </div>
+</div>
+</div>
+</form>
+
+
+<script type="text/javascript">
+
+var prn;
+var stud_keys=[];
+var teacher_name=[];
+var teacher_data;
+var batch="T2";
+var count=0;
+var students_data;
+
+
+  var config = {
+    apiKey: "AIzaSyB-zPviDEmZeY_7xEdiRgR0FGv7WslsuLE",
+    authDomain: "jwtproject-1aa76.firebaseapp.com",
+    databaseURL: "https://jwtproject-1aa76.firebaseio.com",
+    projectId: "jwtproject-1aa76",
+    storageBucket: "jwtproject-1aa76.appspot.com",
+    messagingSenderId: "1017119305086"
+  };
+  firebase.initializeApp(config);
+
+
+    var firebaseRef =firebase.database().ref();
+    var database =firebase.database();
+
+    var Stud=`/Groups/${batch}/Students`
+    var StudentRef =database.ref(Stud);
+
+
+    var TeachersRef=firebaseRef.child("all_teachers");
+
+
+      TeachersRef.on('value',gotData,errData);
+
+      console.log("abc");
+
+
+           for(var i=0;i<teacher_name.length;i++)
+            {
+            	var k=teacher_name[i];
+            	var ans=teacher_data[k].username;
+            	console.log(ans);
+            }
+
+
+
+      StudentRef.on('value',gotstud,errData);
+
+
+
+
+
+ function teach()
+ {
+
+     console.log("clicked");
+     console.log(teacher_name.length);
+    var  username = document.getElementById("Username").value; 
+    var  password = document.getElementById("password").value;
+
+    if(username==""&&password=="")
+    {    
+    alert("enter username and password");
+    return false;
+	}
+    else
+    {        
+            for(var i=0;i<teacher_name.length;i++)
+            {
+            	var k=teacher_name[i];
+            	var ans=teacher_data[k].username;
+            	var pass=teacher_data[k].password;
+            	console.log(pass);
+            	console.log(ans);
+            	console.log(username);
+            	console.log(password);
+            	if(ans==username&&pass==password)
+            	{
+            	count++;
+            	localStorage.setItem("Teacher_name",username);
+              var abc=localStorage.getItem("Teacher_name");
+              console.log(abc);
+              alert("Login successful");
+              window.location.href="faculty?username="+abc;  
+            	}
+            }
+        
+        if(count==0)
+        {
+        alert("Invald username or password");
+        return false;
+    	}
+
+    }
+}//end of function teach
+        
+
+        function stud()
+        {
+
+          var  student_prn = document.getElementById("prn").value;
+          console.log(student_prn);
+          var count=0;
+          if((student_prn==null))
+          alert("enter prn");   
+          else
+        {
+          for(var i=0;i<stud_keys.length;i++)
+          {
+            var k=stud_keys[i];
+            if(students_data[k]==student_prn)
+            {
+            count++;
+            localStorage.setItem("prn",student_prn);
+            var ans=localStorage.getItem("prn");
+            alert("student login successful");
+
+            window.location.href="student?prn="+ans; 
+ 
+            }
+          }
+          if(count==0)
+          alert("incorrect prn");          
+        }
+      }
+
+
+
+        function gotstud(data){
+        console.log(data.val());
+        //ques is an type of an array  of key of questions
+          students_data =data.val();
+
+         stud_keys=Object.keys(students_data);
+
+         console.log("stud_keys"+ stud_keys);
+
+       //  console.log(stud_keys.length);
+       }
+
+
+      function gotData(data){
+        console.log(data.val());
+         teacher_data=data.val();
+        console.log(teacher_data);
+         teacher_name=Object.keys(teacher_data);
+        console.log(teacher_name.length);
+       }
+
+
+      function errData(err){
+        console.log('Error!');
+        console.log(err);
+      }
+
+
+
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+
+ </div>
+</div>
+</div>
+</form>
+
+
+
+     
+</body>
+</html> 

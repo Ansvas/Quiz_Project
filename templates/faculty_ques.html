@@ -1,0 +1,91 @@
+<html>
+
+<head>
+  <style>
+  .space
+  {
+    height: 10%;
+    text-align: center;
+  }
+  </style>
+
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+
+    <!-- Compiled and minif
+      ied CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+
+    <!-- Compiled and minified JavaScript -->
+
+</head>
+<body>
+  <div class="card-panel red accent-1">
+    <div class="space">
+      <h1>Quiz</h1>
+    </div>
+  </div>
+<div class="Quiz-body">
+
+  <div class="row">
+        <div class="col s12">
+          
+          Please enter your question:
+          <div class="input-field inline">
+            <input id="tquestion" type="text" class="validate">
+            </div>
+        </div>
+      </div>
+    <input type="checkbox" name ="questions" id="checkbox1"  />
+       <label for="checkbox1">1. </label><div class="input-field inline">
+            <input id="toption1" type="text" class="validate">
+            </div><br/>
+   <input type="checkbox" name ="questions" id="checkbox2" />
+       <label for="checkbox2">2.</label><div class="input-field inline">
+            <input id="toption2" type="text" class="validate">
+            </div><br/>
+    <input type="checkbox" name ="questions" id="checkbox3" />
+       <label for="checkbox3">3.</label><div class="input-field inline">
+            <input id="toption3" type="text" class="validate">
+            </div> <br/>
+    <input type="checkbox" name ="questions" id="checkbox4" />
+       <label for="checkbox4">4.</label><div class="input-field inline">
+            <input id="toption4" type="text" class="validate">
+            </div></div><br/>
+ </div>
+
+     <input type="checkbox" name ="questions" id="cbmark1"  />
+       <label for="cbmark1">1 mark </label>
+
+             <input type="checkbox" name ="questions" id="cbmark2"  />
+       <label for="cbmark2">2 mark </label>
+
+             <input type="checkbox" name ="questions" id="cbmark3"  />
+       <label for="cbmark3">3 mark </label>
+
+             <input type="checkbox" name ="questions" id="cbmark4"  />
+       <label for="cbmark4">4 mark </label>
+
+
+
+             <input type="checkbox" name ="questions" id="cbmark5"  />
+       <label for="cbmark5">5 mark </label><br/><br/>
+
+
+
+ <button class="waves-effect waves-light btn" type="submit" onclick="submitclick()">Submit</button>
+
+
+    <!-- JavaScript functions begin here, here we push the question and its options -->
+
+
+
+
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'faculty_ques.js') }}"></script>
+</body>
+</html>

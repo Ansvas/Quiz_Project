@@ -1,0 +1,90 @@
+
+<html>
+<body>
+<div id="myDynamicTable">
+<input type="button" id="create" value="Click here" onclick="Javascript:addTable()">
+to create a Table and add some data using JavaScript
+</div>
+
+<script type="text/javascript">
+
+
+	function addTable() {
+     
+    var myTableDiv = document.getElementById("myDynamicTable");
+     
+    var table = document.createElement('TABLE');
+    table.border='1';
+   
+    var tableBody = document.createElement('TBODY');
+    table.appendChild(tableBody);
+     
+    for (var i=0; i<3; i++){
+       var tr = document.createElement('TR');
+       tableBody.appendChild(tr);
+      
+       for (var j=0; j<4; j++){
+           var td = document.createElement('TD');
+           td.width='75';
+           td.appendChild(document.createTextNode("Cell " + i + "," + j));
+           tr.appendChild(td);
+       }
+    }
+    myTableDiv.appendChild(table);   
+}
+
+
+function deleteRow(obj) {     
+    var index = obj.parentNode.parentNode.rowIndex;
+    var table = document.getElementById("myTableData");
+    table.deleteRow(index);   
+}
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+function GenerateTable() {
+    //Build an array containing Customer records.
+    var customers = new Array();
+    customers.push(["Question no", "Your answer", "Correct answer", "marks"]);
+    customers.push([1, "A", "B", "2"]);
+    customers.push([2, "A", "B", "2"]);
+    customers.push([3, "A", "C", "3"]);
+    customers.push([4, "A", "D", "4"]);
+ 
+    //Create a HTML Table element.
+    var table = document.createElement("TABLE");
+    table.border = "1";
+ 
+    //Get the count of columns.
+    var columnCount = customers[0].length;
+ 
+    //Add the header row.
+    var row = table.insertRow(-1);
+    for (var i = 0; i < columnCount; i++) {
+        var headerCell = document.createElement("TH");
+        headerCell.innerHTML = customers[0][i];
+        row.appendChild(headerCell);
+    }
+ 
+    //Add the data rows.
+    for (var i = 1; i < customers.length; i++) {
+        row = table.insertRow(-1);
+        for (var j = 0; j < columnCount; j++) {
+            var cell = row.insertCell(-1);
+            cell.innerHTML = customers[i][j];
+        }
+    }
+ 
+    var dvTable = document.getElementById("dvTable");
+    dvTable.innerHTML = "";
+    dvTable.appendChild(table);
+}

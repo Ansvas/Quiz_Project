@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML dynamic table using JavaScript</title>
+</head>
+<body onload="load()">
+<div id="myform">
+<b>Simple form with name and age ...</b>
+<table>
+    <tr>
+        <td>Name:</td>
+        <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+        <td>Age:</td>
+        <td><input type="text" id="age">
+        <input type="button" id="add" value="Add" onclick="Javascript:addRow()"></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</div>
+<div id="mydata">
+<b>Current data in the system ...</b>
+<table id="myTableData"  border="1" cellpadding="2">
+    <tr>
+        <td><b>Question no</b></td>
+        <td><b>marked answer</b></td>
+        <td><b>correct answer</b></td>
+        <td><b>marks</b></td>
+    </tr>
+</table><br/>
+</div>
+
+
+
+<script type="text/javascript">
+
+count=1;
+marks=2;
+
+
+function addRow() {
+         
+    var myName = document.getElementById("name");
+    var age = document.getElementById("age");
+    var table = document.getElementById("myTableData");
+
+
+    
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+
+    row.insertCell(0).innerHTML= count;
+    row.insertCell(1).innerHTML= myName.value;
+    row.insertCell(2).innerHTML= age.value;
+    row.insertCell(3).innerHTML= marks;
+    count++;
+}
+
+
+
+
+
+
+</script>
+</body>
+</html>

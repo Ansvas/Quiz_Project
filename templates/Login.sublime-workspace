@@ -1,0 +1,780 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"re",
+				"required\tAttr"
+			],
+			[
+				"userna",
+				"username"
+			],
+			[
+				"teacher",
+				"teacher_data"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"te",
+				"Teacher_name"
+			],
+			[
+				"Te",
+				"Teacher_name"
+			],
+			[
+				"Tea",
+				"Teacher_name"
+			],
+			[
+				"cb",
+				"cbmark5"
+			],
+			[
+				"ques",
+				"quesRef"
+			],
+			[
+				"fire",
+				"firebase"
+			],
+			[
+				"student",
+				"student_prn"
+			],
+			[
+				"sub",
+				"sub_div_id"
+			],
+			[
+				"clicked",
+				"clicked_id"
+			],
+			[
+				"div",
+				"div2"
+			],
+			[
+				"opti",
+				"option1"
+			],
+			[
+				"Ques",
+				"Question_mark_Ref"
+			],
+			[
+				"marks",
+				"marks_name"
+			],
+			[
+				"prn",
+				"prnref"
+			],
+			[
+				"btn",
+				"btn_id"
+			],
+			[
+				"app",
+				"appendChild"
+			],
+			[
+				"gr",
+				"group_list"
+			],
+			[
+				"grp",
+				"grp_name"
+			],
+			[
+				"inn",
+				"innerHTML"
+			],
+			[
+				"set",
+				"setAttribute"
+			],
+			[
+				"g",
+				"grp_data"
+			],
+			[
+				"gro",
+				"groupRef"
+			],
+			[
+				"mark",
+				"marks_name"
+			],
+			[
+				"err",
+				"errData"
+			],
+			[
+				"Qu",
+				"QuestionRefr"
+			],
+			[
+				"text",
+				"textContent"
+			],
+			[
+				"in",
+				"initialise"
+			],
+			[
+				"Su",
+				"SubjectRefr"
+			],
+			[
+				"Sub",
+				"SubjectRefr"
+			],
+			[
+				"Gro",
+				"Groupname"
+			],
+			[
+				"onc",
+				"onclick\tAttr"
+			],
+			[
+				"que",
+				"ques3"
+			],
+			[
+				"Stu",
+				"StudentRef_result"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"k",
+				"k"
+			],
+			[
+				"qu",
+				"ques4"
+			],
+			[
+				"all",
+				"allq"
+			],
+			[
+				"corre",
+				"correct_ans"
+			],
+			[
+				"Student",
+				"Student_ans"
+			],
+			[
+				"table",
+				"tableCreate"
+			],
+			[
+				"Stude",
+				"Students"
+			],
+			[
+				"stu",
+				"student_pr"
+			],
+			[
+				"Student_",
+				"student_prn"
+			],
+			[
+				"uer",
+				"username"
+			],
+			[
+				"pas",
+				"password"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"stud",
+				"stud_keys"
+			],
+			[
+				"passwo",
+				"password1"
+			],
+			[
+				"usernam",
+				"username1"
+			],
+			[
+				"use",
+				"username1"
+			],
+			[
+				"pa",
+				"password1"
+			],
+			[
+				"gotData",
+				"gotData_ans"
+			],
+			[
+				"m",
+				"m"
+			],
+			[
+				"ranarr",
+				"ranarr2"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"ran",
+				"ranarr5"
+			],
+			[
+				"che",
+				"checkbox1"
+			],
+			[
+				"display",
+				"display5q"
+			],
+			[
+				"dis",
+				"display4q"
+			],
+			[
+				"disp",
+				"display3q"
+			],
+			[
+				"rana",
+				"ranarr4"
+			],
+			[
+				"tota",
+				"total_q_5"
+			],
+			[
+				"total_q",
+				"total_q_5"
+			],
+			[
+				"total",
+				"total_q_3"
+			],
+			[
+				"to",
+				"total_q_2"
+			],
+			[
+				"total_q_",
+				"total_q_5"
+			],
+			[
+				"ch",
+				"child"
+			],
+			[
+				"cou",
+				"count5"
+			],
+			[
+				"q",
+				"questionRef5"
+			],
+			[
+				"se",
+				"settingvalues"
+			],
+			[
+				"check",
+				"checked"
+			],
+			[
+				"fie",
+				"firebaseRef"
+			],
+			[
+				"question",
+				"questionRef1"
+			],
+			[
+				"count",
+				"count1"
+			],
+			[
+				"co",
+				"count3"
+			],
+			[
+				"cbma",
+				"cbmark1"
+			],
+			[
+				"opt",
+				"option4"
+			],
+			[
+				"op",
+				"option3"
+			],
+			[
+				"option",
+				"option1"
+			],
+			[
+				"optio",
+				"option1"
+			],
+			[
+				"checkbox",
+				"checkbox1"
+			],
+			[
+				"do",
+				"doalert"
+			],
+			[
+				"chec",
+				"checkbox1"
+			],
+			[
+				"submit",
+				"submitclick"
+			],
+			[
+				"c",
+				"checkbox1"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"option4",
+				"option4text"
+			],
+			[
+				"option3",
+				"option3text"
+			],
+			[
+				"h",
+				"h5\tTag"
+			],
+			[
+				"p",
+				"pooja"
+			],
+			[
+				"ref",
+				"refoption1"
+			],
+			[
+				"de",
+				"defaultCountdown"
+			],
+			[
+				"new",
+				"newPage"
+			],
+			[
+				"top",
+				"toption3"
+			],
+			[
+				"t",
+				"tquestion"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"alin",
+				"align-content"
+			],
+			[
+				"extra",
+				"extravalue"
+			],
+			[
+				"ext",
+				"extradata"
+			],
+			[
+				"fir",
+				"firebasedata"
+			],
+			[
+				"data",
+				"database"
+			],
+			[
+				"event",
+				"eventblock"
+			],
+			[
+				"even",
+				"eventsdatablock"
+			],
+			[
+				"cla",
+				"classroom"
+			],
+			[
+				"al",
+				"padding-left"
+			],
+			[
+				"chg",
+				"chgborderclr"
+			],
+			[
+				"onmou",
+				"onmouseover\tAttr"
+			],
+			[
+				"onm",
+				"onmouseup\tAttr"
+			],
+			[
+				"ur",
+				"urname"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"d",
+				"displayOutput"
+			],
+			[
+				"s",
+				"Submit"
+			],
+			[
+				"so",
+				"something"
+			],
+			[
+				"au",
+				"autofocus\tAttr"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"ti",
+				"title\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Shiva/Desktop/Projects/jwt test/templates/Login.html",
+		"/C/Users/Shiva/Desktop/Projects/intern/inter-pro/src/index.js",
+		"/C/Users/Shiva/Desktop/Projects/intern/inter-pro/src/UploadScreen.js",
+		"/C/Users/Shiva/Desktop/Projects/intern/inter-pro/src/Register.js",
+		"/C/Users/Shiva/Desktop/Projects/intern/inter-pro/src/Loginscreen.js",
+		"/C/Users/Shiva/Desktop/Projects/intern/inter-pro/src/App.js",
+		"/C/Users/Shiva/Desktop/Projects/intern/inter-pro/src/Login.js",
+		"/F/hackathon final/login_new.html",
+		"/C/Users/Shiva/Desktop/Projects/intern/intern-pro/public/index.html",
+		"/C/Users/Shiva/Desktop/Projects/intern/intern-pro/package.json",
+		"/C/Users/Shiva/my-app/src/index.jsx",
+		"/C/Users/Shiva/my-app/src/index.html",
+		"/C/Users/Shiva/my-app/src/RegisterPage/RegisterPage.jsx",
+		"/C/Users/Shiva/my-app/src/LoginPage/LoginPage.jsx",
+		"/C/Users/Shiva/my-app/src/HomePage/HomePage.jsx",
+		"/C/Users/Shiva/my-app/src/App/App.jsx",
+		"/C/Users/Shiva/my-app/src/_service/user.service.js",
+		"/C/Users/Shiva/my-app/src/_reducers/users.reducer.js",
+		"/C/Users/Shiva/my-app/src/_reducers/registration.reducer.js",
+		"/C/Users/Shiva/my-app/src/_reducers/authentication.reducer.js",
+		"/C/Users/Shiva/my-app/src/_reducers/alert.reducer.js",
+		"/C/Users/Shiva/my-app/src/_helpers/store.js",
+		"/C/Users/Shiva/my-app/src/_helpers/history.js",
+		"/C/Users/Shiva/my-app/src/_helpers/fake-backend.js",
+		"/C/Users/Shiva/my-app/src/_helpers/auth-header.js",
+		"/C/Users/Shiva/my-app/src/_constants/user.constants.js",
+		"/C/Users/Shiva/my-app/src/_constants/alert.constants.js",
+		"/C/Users/Shiva/my-app/src/_components/PrivateRoute.jsx",
+		"/C/Users/Shiva/my-app/src/_actions/user.actions.js",
+		"/C/Users/Shiva/my-app/src/_actions/alert.actions.js",
+		"/C/Users/Shiva/my-app/src/index.js",
+		"/C/Users/Shiva/my-app/src/App.js",
+		"/C/Users/Shiva/Desktop/Projects/JWT_project/templates/Login_test.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/templates/student_quest.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/static/student_quest.js",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/templates/faculty.html",
+		"/C/Users/Shiva/my-app/public/index.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/static/faculty_ques.js",
+		"/C/Users/Shiva/Desktop/Projects/testing for jwt/templates/auth_user.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/static/result.js",
+		"/C/Users/Shiva/Desktop/Projects/testing for jwt/templates/index.html",
+		"/C/Users/Shiva/Desktop/Projects/testing for jwt/templates/output.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/templates/result.html",
+		"/C/Users/Shiva/Desktop/Projects/JWT_project/templates/faculty_ques.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/templates/charttest.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/templates/test2.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/templates/test3for table.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/templates/auth_user.html",
+		"/C/Users/Shiva/Desktop/testtttttt.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/templates/faculty_ques.html",
+		"/C/Users/Shiva/Desktop/awt.java",
+		"/C/Users/Shiva/Desktop/testtttttttttttttttttt.js",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/templates/test.html",
+		"/C/Users/Shiva/Desktop/Projects/testing for jwt/index.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/hpdf/week-1/templates/name.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/static/test.js",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/static/test2.js",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/static/result.html",
+		"/C/Users/Shiva/Desktop/Projects/web application/content page.html",
+		"/C/Users/Shiva/Desktop/Projects/web application/content page.js",
+		"/C/Users/Shiva/Desktop/Projects/JWT_project/templates/faculty_ques.js",
+		"/C/Users/Shiva/hello-python-flask/microservices/app/src/templates/name.html",
+		"/C/Users/Shiva/hello-python-flask/microservices/app/src/templates/authors.html",
+		"/C/Users/Shiva/hello-python-flask/microservices/app/src/templates/profile.html",
+		"/C/Users/Shiva/Desktop/pthon-test/hpdf/week-1/templates/form.html",
+		"/C/Users/Shiva/jwt/hello-python-flask/microservices/app/src/templates/Login.html",
+		"/C/Users/Shiva/Desktop/authors.html",
+		"/C/Users/Shiva/hello-python-flask/microservices/app/src/templates/form.html",
+		"/C/Users/Shiva/Desktop/Projects/JWT_project/templates/student_quest.js",
+		"/C/Users/Shiva/hello-python-flask/microservices/app/src/templates/index.html",
+		"/C/Users/Shiva/jwt/hello-python-flask/microservices/app/src/templates/student_quest.html",
+		"/C/Users/Shiva/Desktop/test.html",
+		"/C/Users/Shiva/Desktop/Projects/JWT_project/templates/Login.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/studentq test.html",
+		"/C/Users/Shiva/jwt/hello-python-flask/microservices/app/src/static/student_quest.js",
+		"/C/Users/Shiva/Desktop/test.js",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/studentq.js",
+		"/C/Users/Shiva/jwt/hello-python-flask/microservices/app/src/static/css/jquery.countdown.css",
+		"/C/Users/Shiva/jwt/hello-python-flask/microservices/app/src/templates/faculty_ques.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/abc.js",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/faculty database.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/testlogin.js",
+		"/C/Users/Shiva/Desktop/Projects/Explore Rajasthan(A project by TeamOak)/project/Ministry Web Portal/templates/QuestionPage.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/test.html",
+		"/C/Users/Shiva/Desktop/Projects/Explore Rajasthan(A project by TeamOak)/project/Ministry Web Portal/templates/test.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/test.js",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/test2fac.js",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/testimg.html",
+		"/C/Users/Shiva/Desktop/Projects/Explore Rajasthan(A project by TeamOak)/project/Ministry Web Portal/templates/test.js",
+		"/C/Users/Shiva/Desktop/Projects/web application/login.html",
+		"/C/Users/Shiva/Desktop/Projects/Explore Rajasthan(A project by TeamOak)/project/Ministry Web Portal/templates/login.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/justtest.js",
+		"/C/Users/Shiva/Desktop/Projects/JWT_project/templates/student_quest.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/justtest.html",
+		"/C/Users/Shiva/hello/config.xml",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/facultyq.js",
+		"/C/Users/Shiva/Desktop/Projects/vdhi/pusher-vue-pwa/server.js",
+		"/C/Users/Shiva/Desktop/Projects/vdhi/pusher-vue-pwa/.env",
+		"/C/Users/Shiva/Desktop/Projects/vdhi/pusher-vue-pwa/src/components/Status.vue",
+		"/C/Users/Shiva/Desktop/Projects/vdhi/pusher-vue-pwa/src/router/index.js",
+		"/C/Users/Shiva/Desktop/Projects/vdhi/pusher-vue-pwa/src/App.vue",
+		"/C/Users/Shiva/Desktop/Projects/vdhi/pusher-vue-pwa/src/components/Hello.vue",
+		"/C/Users/Shiva/Desktop/Projects/vdhi/pusher-vue-pwa/index.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/nothing.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/faculty q test.html",
+		"/C/Users/Shiva/Desktop/Projects/JWT_project/templates/index.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/student_quest.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/index.html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/firebase.js",
+		"/C/Users/Shiva/Desktop/JWT_project/templates/faculty_ques (2).html",
+		"/C/Users/Shiva/Desktop/Projects/jwt test/faculty_ques (2).html",
+		"/C/Users/Shiva/Desktop/JWT_project/templates/test.html",
+		"/C/Users/Shiva/Desktop/abc.html",
+		"/C/Users/Shiva/Desktop/web application/test.html",
+		"/C/Users/Shiva/Desktop/request/requests/docs/_templates/sidebarintro.html",
+		"/C/Users/Shiva/Desktop/jwt test/index.html",
+		"/C/Users/Shiva/Desktop/JWT_project/templates/faculty_ques.html",
+		"/C/Users/Shiva/Desktop/request/requests/docs/_templates/hacks.html",
+		"/C/Users/Shiva/Desktop/web application/content page.js",
+		"/C/Users/Shiva/Desktop/web application/content page.html",
+		"/C/Users/Shiva/Downloads/Compressed/index.html",
+		"/C/Users/Shiva/Desktop/JWT_project/templates/firebase.js",
+		"/C/Users/Shiva/Desktop/JWT_project/templates/index.html",
+		"/C/Users/Shiva/Downloads/Compressed/js/jquery.countdown-id.js",
+		"/C/Users/Shiva/Downloads/Compressed/js/jquery.countdown-fr.js",
+		"/C/Users/Shiva/Downloads/Compressed/js/jquery.countdown-et.js",
+		"/C/Users/Shiva/Desktop/web application/tut-noti js files/functions/index.js",
+		"/C/Users/Shiva/Documents/sublime/fjava.html"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Login.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 225.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
