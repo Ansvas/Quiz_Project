@@ -19,7 +19,7 @@ Styling and Scripting languages:-
 2)CSS3
 
 Database:-
-1)Firbase
+1)Firebase
 
 Cloud Platform:-
 1)Hasura CLI
